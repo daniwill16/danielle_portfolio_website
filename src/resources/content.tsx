@@ -56,7 +56,7 @@ const social: Social = [
 
 const home: Home = {
   path: "/",
-  image: "/images/og/home.jpg",
+  image: "/images/IMG_3689.JPG",
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
@@ -295,6 +295,11 @@ const gallery: Gallery = {
       src: "/images/Reelette Logo.png",
       alt: "image",
       orientation: "horizontal",
+    },
+    {
+      src: "/images/IMG_1236.jpg",
+      alt: "image",
+      orientation: "vertical",
     },
     {
       src: "/images/SteamAchievement2.png",

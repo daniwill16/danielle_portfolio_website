@@ -70,6 +70,13 @@ export default function Home() {
               {home.headline}
             </Heading>
           </RevealFx>
+          <RevealFx translateY="8" delay={0.1} fillWidth horizontal="center" paddingBottom="16">
+            <img
+              src="/images/IMG_1236.jpg"
+              alt="Danielle Williams"
+              style={{ width: "100%", maxWidth: "600px", borderRadius: "16px" }}
+            />
+          </RevealFx>
           <RevealFx translateY="8" delay={0.2} fillWidth horizontal="center" paddingBottom="32">
             <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-xl">
               {home.subline}
@@ -111,7 +118,7 @@ export default function Home() {
           <Row fillWidth gap="24" marginTop="40" s={{ direction: "column" }}>
             <Row flex={1} paddingLeft="l" paddingTop="24">
               <Heading as="h2" variant="display-strong-xs" wrap="balance">
-                Latest from the blog
+                Browse Danielle's Achievements
               </Heading>
             </Row>
             <Row flex={3} paddingX="20">
