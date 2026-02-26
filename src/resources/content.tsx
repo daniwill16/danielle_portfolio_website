@@ -297,11 +297,6 @@ const gallery: Gallery = {
       orientation: "horizontal",
     },
     {
-      src: "/images/IMG_1236.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
       src: "/images/SteamAchievement2.png",
       alt: "image",
       orientation: "horizontal",
@@ -310,6 +305,11 @@ const gallery: Gallery = {
       src: "/images/IMG_7853.jpg",
       alt: "image",
       orientation: "vertical",
+    },
+    {
+      src: "/images/IMG_0468.JPG",
+      alt: "image",
+      orientation: "horizontal",
     },
   ],
 };
