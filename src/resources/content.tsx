@@ -247,8 +247,8 @@ const about: About = {
 
 const blog: Blog = {
   path: "/achievements",
-  label: "Achievements",
-  title: "Awards, honors, and accomplishments by Danielle Williams",
+  label: "Accomplishments",
+  title: "Achievements, involvement, and activities by Danielle Williams",
   description: `Awards, honors, and accomplishments by ${person.name}`,
   // Create new blog posts by adding a new .mdx file to app/blog/posts
   // All posts will be listed on the /blog route
@@ -292,7 +292,7 @@ const gallery: Gallery = {
       orientation: "horizontal",
     },
     {
-      src: "/images/Reelette Logo.png",
+      src: "/images/ReeletteLogo.png",
       alt: "image",
       orientation: "horizontal",
     },
@@ -307,14 +307,9 @@ const gallery: Gallery = {
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/horizontal-4.jpg",
+      src: "/images/IMG_7853.jpg",
       alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/vertical-3.jpg",
-      alt: "image",
-      orientation: "horizontal",
+      orientation: "vertical",
     },
   ],
 };
