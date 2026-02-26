@@ -2,18 +2,18 @@ import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/
 import { Line, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
-  firstName: "Selene",
-  lastName: "Yu",
-  name: `Selene Yu`,
-  role: "Design Engineer",
-  avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  firstName: "Danielle",
+  lastName: "Williams",
+  name: `Danielle Williams`,
+  role: "Data Science and Analytics",
+  avatar: "/images/IMG_3689.JPG",
+  email: "daniwill16@yahoo.com",
+  location: "America/Chicago", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  languages: ["English"], // optional: Leave the array empty if you don't want to display languages
 };
 
 const newsletter: Newsletter = {
-  display: true,
+  display: false,
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
   description: <>My weekly newsletter about creativity and engineering</>,
 };
@@ -25,13 +25,13 @@ const social: Social = [
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system",
+    link: "https://github.com/daniwill16/danielle_portfolio_website",
     essential: true,
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
+    link: "https://www.linkedin.com/in/danielle-williams-206221309/",
     essential: true,
   },
   {
@@ -44,7 +44,7 @@ const social: Social = [
     name: "Threads",
     icon: "threads",
     link: "https://www.threads.com/@once_ui",
-    essential: true,
+    essential: false,
   },
   {
     name: "Email",
@@ -60,9 +60,9 @@ const home: Home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  headline: <>Engineering the future, one line of data at a time</>,
   featured: {
-    display: true,
+    display: false,
     title: (
       <Row gap="12" vertical="center">
         <strong className="ml-4">Once UI</strong>{" "}
@@ -76,7 +76,7 @@ const home: Home = {
   },
   subline: (
     <>
-    I'm Selene, a design engineer at <Text as="span" size="xl" weight="strong">ONCE UI</Text>, where I craft intuitive <br /> user experiences. After hours, I build my own projects.
+    I'm Danielle, a Computer Science major at <Text as="span" size="xl" weight="strong">Louisiana State University</Text>, where I concentrate in <br /> Data Science and Analytics.
 </>
   ),
 };
@@ -94,7 +94,7 @@ const about: About = {
     display: true,
   },
   calendar: {
-    display: true,
+    display: false,
     link: "https://cal.com",
   },
   intro: {
@@ -102,9 +102,9 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        I am Danielle Williams, a Computer Science student majoring in Data Science and Analytics with a passion for turning complex data into clear insights,
+        building meaningful projects, and developing the technical skills that will shape my future in tech. I enjoy exploring how data, problem-solving, and 
+        creativity come together to make smarter, more impactful solutions.
       </>
     ),
   },
@@ -113,58 +113,65 @@ const about: About = {
     title: "Work Experience",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "Aeropostale",
+        timeframe: "January 2024 - January 2026",
+        role: "Sales Associate",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+           Provided high-quality customer service by helping shoppers with product selection, styling advice,
+           sizing guidance, and handling inquiries, returns, and exchanges professionally.
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            Collaborated with coworkers to meet daily sales goals while maintaining
+            POS accuracy, store organization, and strong visual merchandising standards.
           </>,
         ],
         images: [
           // optional: leave the array empty if you don't want to display images
           {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
+            src: "/images/aeropostalelogo.jpg",
+            alt: "Aeropostale Logo",
             width: 16,
             height: 9,
           },
         ],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "Outlier AI",
+        timeframe: "June 2024 - October 2024",
+        role: "AI Trainer",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            Evaluated AI model outputs through systematic review, performance analysis, and root‑cause
+            investigation to ensure accuracy, consistency, and alignment with expected solutions.
           </>,
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            Supported model training and improvement by analyzing large volumes of responses, preparing analytical reports with key 
+            insights and recommendations, and collaborating with cross‑functional teams across national and international locations to drive data‑driven enhancements.
           </>,
         ],
-        images: [],
+        images: [
+          {
+            src: "/images/outlierlogo.webp",
+            alt: "Outlier AI Logo",
+            width: 16,
+            height: 9,
+          },
+        ],
       },
     ],
   },
   studies: {
     display: true, // set to false to hide this section
-    title: "Studies",
+    title: "Education",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "Louisiana State University",
+        description: <>Major: Computer Science - Data Science and Analytics. Expected Completion = May 2027</>,
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "Haughton High School",
+        description: <>Graduated in May 2023</>,
       },
     ],
   },
@@ -173,79 +180,85 @@ const about: About = {
     title: "Technical skills",
     skills: [
       {
-        title: "Figma",
+        title: "Languages",
         description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
+          <>Proficient in Python, Java, SQL, and JavaScript for building data-driven applications, backend systems, and interactive web functionality.</>
         ),
         tags: [
           {
-            name: "Figma",
-            icon: "figma",
-          },
-        ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
+            name: "Python",
+            icon: "python",
           },
           {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
+            name: "Java",
+            icon: "java",
           },
-        ],
-      },
-      {
-        title: "Next.js",
-        description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
-        ),
-        tags: [
+          {
+            name: "SQl",
+            icon: "sql",
+          },
           {
             name: "JavaScript",
             icon: "javascript",
+          },
+        ],
+        // optional: leave the array empty if you don't want to display images
+        images: [],
+      },
+      {
+        title: "Frameworks & Libraries",
+        description: (
+          <>Experienced in developing responsive, full-stack applications using React and Next.js.</>
+        ),
+        tags: [
+          {
+            name: "React",
+            icon: "react",
           },
           {
             name: "Next.js",
             icon: "nextjs",
           },
+        ],
+        // optional: leave the array empty if you don't want to display images
+        images: [],
+      },
+      {
+        title: "Tools & Technologies",
+        description: (
+          <>Skilled in using Git, GitHub, and VS Code for efficient development, version control, and collaborative workflows.</>
+        ),
+        tags: [
           {
-            name: "Supabase",
-            icon: "supabase",
+            name: "GitHub",
+            icon: "github",
+          },
+          {
+            name: "VS Code",
+            icon: "vscode",
           },
         ],
         // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
     ],
   },
 };
 
 const blog: Blog = {
-  path: "/blog",
-  label: "Blog",
-  title: "Writing about design and tech...",
-  description: `Read what ${person.name} has been up to recently`,
+  path: "/achievements",
+  label: "Achievements",
+  title: "Awards, honors, and accomplishments by Danielle Williams",
+  description: `Awards, honors, and accomplishments by ${person.name}`,
   // Create new blog posts by adding a new .mdx file to app/blog/posts
   // All posts will be listed on the /blog route
 };
 
 const work: Work = {
   path: "/work",
-  label: "Work",
-  title: `Projects – ${person.name}`,
-  description: `Design and dev projects by ${person.name}`,
+  label: "Projects",
+  title: `Completed and Current Projects`,
+  description: `Completed and current projects by ${person.name}`,
   // Create new project pages by adding a new .mdx file to app/blog/posts
   // All projects will be listed on the /home and /work routes
 };
@@ -259,32 +272,32 @@ const gallery: Gallery = {
   // These are placeholder images, replace with your own
   images: [
     {
-      src: "/images/gallery/horizontal-1.jpg",
+      src: "/images/IMG_3689.JPG",
       alt: "image",
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/vertical-4.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/horizontal-3.jpg",
+      src: "/images/SteamAchievement.png",
       alt: "image",
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/vertical-1.jpg",
+      src: "/images/SteamAchievement3.png",
       alt: "image",
-      orientation: "vertical",
+      orientation: "horizontal",
     },
     {
-      src: "/images/gallery/vertical-2.jpg",
+      src: "/images/DeansList1.png",
       alt: "image",
-      orientation: "vertical",
+      orientation: "horizontal",
     },
     {
-      src: "/images/gallery/horizontal-2.jpg",
+      src: "/images/Reelette Logo.png",
+      alt: "image",
+      orientation: "horizontal",
+    },
+    {
+      src: "/images/SteamAchievement2.png",
       alt: "image",
       orientation: "horizontal",
     },
@@ -296,7 +309,7 @@ const gallery: Gallery = {
     {
       src: "/images/gallery/vertical-3.jpg",
       alt: "image",
-      orientation: "vertical",
+      orientation: "horizontal",
     },
   ],
 };
