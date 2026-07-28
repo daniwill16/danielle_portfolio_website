@@ -72,7 +72,7 @@ export default function Home() {
           </RevealFx>
           <RevealFx translateY="8" delay={0.1} fillWidth horizontal="center" paddingBottom="16">
             <img
-              src="/images/IMG_0468.jpg"
+              src="/images/IMG_1378.JPG"
               alt="Danielle Williams"
               style={{ width: "100%", maxWidth: "600px", borderRadius: "16px" }}
             />

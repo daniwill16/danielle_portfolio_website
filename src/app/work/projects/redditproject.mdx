@@ -1,0 +1,109 @@
+---
+title: "Temporal Network Analysis of Reddit Social Interactions"
+summary: "A distributed big‑data system that models how information spreads across Reddit using temporal graph analytics, community detection, and cascade prediction."
+images:
+  - "/images/timeslice0.png"
+  - "/images/timeslice1.png"
+  - "/images/timeslice2.png"
+  - "/images/timeslice3.png"
+publishedAt: "2026-05-02"
+---
+
+## Overview
+This project analyzes how information spreads across Reddit by constructing large‑scale temporal interaction graphs from April 2019 submission and comment data. Using Apache Spark, GraphFrames, and AWS S3, the system processes over 200 GB of raw data to detect evolving communities, identify influential users, and model viral cascades.
+
+The pipeline segments Reddit interactions into six overlapping time slices, applies the Label Propagation Algorithm (LPA) for community detection, and tracks how communities grow, merge, fragment, or disappear using Jaccard similarity. Visualizations were produced using Gephi and Python to illustrate temporal evolution and statistical patterns.
+
+## Motivation
+Reddit’s structure of posts, comments, and replies creates a natural temporal network. Traditional static graph analysis fails to capture how communities evolve over time. Temporal network analysis allows us to observe:
+
+- community formation and dissolution  
+- information flow between groups  
+- influential bridge users  
+- viral cascades and early engagement patterns  
+
+With Reddit’s massive scale, distributed computing is essential for meaningful analysis.
+
+## Big Data Frameworks and Tools
+- Apache Spark (PySpark)  
+- GraphFrames  
+- NetworkX  
+- Gephi and Graphviz  
+- AWS S3  
+- SageMaker and Google Colab  
+- Matplotlib and Pandas  
+
+## Datasets
+- Reddit Submissions (RS‑2019‑04)  
+- Reddit Comments (RC‑2019‑04)  
+Source: Pushshift via HuggingFace  
+Size: ~200 GB uncompressed  
+
+## System Pipeline
+
+### 1. Data Ingestion and Preprocessing
+- Loaded JSONL data from AWS S3  
+- Defined explicit PySpark schemas  
+- Filtered deleted users, AutoModerator, and bot accounts  
+- Converted cleaned data to Parquet  
+- Computed exploratory statistics  
+
+### 2. Graph Construction
+- Reconstructed reply chains using Reddit ID prefixes  
+- Built directed user‑to‑user interaction edges  
+- Joined submissions and comments to identify parent authors  
+- Produced a large interaction graph  
+
+### 3. Temporal Slicing
+- Divided data into six 6‑day windows  
+- Each slice overlaps the next by one day  
+- Constructed a subgraph for each slice  
+
+### 4. Community Detection (LPA)
+- Applied Label Propagation Algorithm  
+- Used four iterations  
+- Filtered communities under 300 members  
+- Assigned persistent colors for tracking  
+
+### 5. Community Tracking
+- Computed Jaccard similarity between slices  
+- Used greedy matching to track persistence and change  
+- Produced labeled DataFrames for each slice  
+- Exported graphs to GEXF for Gephi  
+
+### 6. Cascade Prediction Model
+- Defined cascades using all comments under a submission  
+- Used first‑hour features: early comments, unique authors, max score, average score  
+- Trained a Random Forest Regressor on 11M cascades  
+- Predicted log‑transformed cascade size  
+
+Model Performance:  
+- RMSE: 0.515  
+- MAE: 0.372  
+- R²: 0.733  
+
+## Key Findings
+- Power‑law behavior in comment distribution  
+- Subreddit activity heavily skewed  
+- 75 percent of detected communities have only one member  
+- Fragmentation increases over time  
+- Bridge users influence information flow  
+- High connectivity even in fragmented slices  
+
+## My Contributions
+- Visualization and reporting  
+- Produced temporal graph visuals and statistical plots  
+- Created final report and presentation materials  
+- Assisted with analysis and interpretation of community patterns  
+
+## Technical Challenges
+- Processing 200 GB of data  
+- Reconstructing reply chains  
+- Maintaining community structure during filtering  
+- Learning Gephi’s timeline and partition tools  
+- Optimizing Spark and Parquet performance  
+
+## Conclusion
+This project successfully built a distributed pipeline capable of analyzing large‑scale Reddit interaction data. By combining Spark, GraphFrames, temporal slicing, LPA clustering, and Jaccard similarity tracking, the system reveals how communities evolve and how information spreads across Reddit.
+
+The cascade model demonstrates that early engagement is a strong predictor of viral discussion growth. Future extensions include sentiment‑aware weighting, full‑scale EMR cluster processing, and expanded temporal windows.

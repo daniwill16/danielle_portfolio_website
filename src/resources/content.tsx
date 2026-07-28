@@ -35,12 +35,6 @@ const social: Social = [
     essential: true,
   },
   {
-    name: "Instagram",
-    icon: "instagram",
-    link: "https://www.instagram.com/once_ui/",
-    essential: false,
-  },
-  {
     name: "Threads",
     icon: "threads",
     link: "https://www.threads.com/@once_ui",
@@ -113,6 +107,28 @@ const about: About = {
     title: "Work Experience",
     experiences: [
       {
+        company: "Woman's Hospital",
+        timeframe: "June 2026 - July 2026",
+        role: "Information Systems Intern",
+        achievements: [
+          <>
+           Gained hands-on exposure to hospital information systems by shadowing multiple IT teams, participating in professional development sessions, and learning how technology supports clinical and administrative healthcare operations.
+          </>,
+          <>
+            Completed independent and collaborative data analysis projects using Power BI, Power Automate, and other tools, strengthening technical, analytical, and problem-solving skills while supporting operational decision-making.
+          </>,
+        ],
+        images: [
+          // optional: leave the array empty if you don't want to display images
+          {
+            src: "/images/womanshospitallogo.jpg",
+            alt: "Woman's Hospital Logo",
+            width: 16,
+            height: 9,
+          },
+        ],
+      },
+      {
         company: "Aeropostale",
         timeframe: "January 2024 - January 2026",
         role: "Sales Associate",
@@ -167,11 +183,12 @@ const about: About = {
     institutions: [
       {
         name: "Louisiana State University",
-        description: <>Major: Computer Science - Data Science and Analytics. Expected Completion = May 2027</>,
+        description: <>Major: Computer Science - Data Science and Analytics.<br />
+        Expected Completion = Dec 2026</>,
       },
       {
         name: "Haughton High School",
-        description: <>Graduated in May 2023</>,
+        description: <>Graduated Magna Cum Laude in May 2023</>,
       },
     ],
   },
@@ -257,8 +274,8 @@ const blog: Blog = {
 const work: Work = {
   path: "/work",
   label: "Projects",
-  title: `Completed and Current Projects`,
-  description: `Completed and current projects by ${person.name}`,
+  title: `Completed Projects`,
+  description: `Completed projects by ${person.name}`,
   // Create new project pages by adding a new .mdx file to app/blog/posts
   // All projects will be listed on the /home and /work routes
 };

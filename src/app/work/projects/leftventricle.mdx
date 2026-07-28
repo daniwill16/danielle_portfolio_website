@@ -1,33 +1,32 @@
 ---
 title: "Automated Left Ventricle Segmentation"
-summary: "A deep learning project using U-Net to automatically segment the left ventricle from cardiac MRI scans."
-publishedAt: "Present"
+summary: "A deep learning pipeline using a U-Net architecture to automatically segment the left ventricle from cardiac MRI and CT scans for downstream medical analysis."
+publishedAt: "2025-05-02"
+images:
+  - "/images/segmentationPreliminaryData04062026.PNG"
+  - "/images/metrics2.jpeg"
 ---
 
 ## Overview
-This project focuses on automating the segmentation of the left ventricle from cardiac MRI scans. Manual contouring is time‑consuming and limits the scalability of tasks like mesh generation and analysis. By developing a deep learning–based segmentation pipeline, the goal is to accelerate the transition from raw MRI data to computational modeling, ultimately supporting faster diagnostic and prognostic workflows.
 
-## Problem Motivation
-MRI scans appear exclusively in grayscale, and the lack of clear visual boundaries makes automated segmentation challenging. Existing tools often require manual input for each image, which becomes impractical when large datasets are needed for research pipelines. Automating this step would save significant time and enable large‑scale studies that rely on high‑volume segmentation data.
+This project developed an automated segmentation pipeline for the left ventricle (LV) from cardiac MRI and CT scans. Accurate LV segmentation is critical for downstream tasks like finite element analysis (FEA) and mesh generation, which are used to model and simulate potential treatments for myocardial infarction — the leading cause of death worldwide.
 
-## Dataset
-The project uses the **Sunnybrook Cardiac Dataset (SCD)**, which provides:
-- **805 manually drawn inner contours**  
-- **420 manually drawn outer contours**  
-- Corresponding MRI images  
-- Additional unlabeled images for potential training or testing  
+## My Contributions
 
-Contours are provided as `.txt` files containing X/Y coordinate pairs that outline the inner and outer ventricular walls.
+As a core member of the team, I was responsible for developing the **training and validation components** of the project. This included:
 
-## Technical Approach
-- **Model Architecture:** U‑Net, chosen for its strong performance in biomedical image segmentation  
-- **Training Strategy:**  
-  - 80/20 train–test split  
-  - Within training: 90/10 train–validation split  
-- **Output Format:** Model‑generated contours matching the coordinate‑based format of the SCD dataset  
-- **Future Flexibility:** Additional unlabeled images can be manually contoured to expand the dataset if needed  
+- Designing the **patient-level 90/10 train/validation split** to prevent data leakage and ensure the model generalized to unseen patients
+- Selecting and justifying the **Binary Cross-Entropy with Logits loss function**, chosen for its stability with raw model outputs and clean handling of multi-output segmentation
+- Establishing the **validation strategy** using multiple metrics including Dice coefficient, IoU, Precision, Recall, Accuracy, and Hausdorff distance
+- Generating **performance visualizations** including metric distribution boxplots and segmentation overlay figures
 
-The goal is to produce accurate, automatically generated segmentations that can be overlaid on MRI images for verification and used in downstream mesh‑generation workflows.
+## Technical Highlights
 
-## Reflection
-This project represents a crucial step in building a fully automated pipeline from MRI acquisition to FEA‑ready meshes. It strengthens skills in computer vision, biomedical imaging, and deep learning while contributing to research aimed at improving patient‑specific modeling and clinical decision support.
+- **Model:** Modified U-Net architecture with two prediction heads for inner and outer LV wall segmentation
+- **Datasets:** Combined the Sunnybrook Cardiac Dataset (SCD) and Automated Cardiac Diagnosis Challenge (ACDC) dataset — two datasets in different formats and dimensions
+- **Results:** Achieved a Dice score of approximately **0.95** with low variance across the validation set, confirming strong generalization to unseen patients
+- **Tools:** Python, PyTorch, OpenCV, albumentations, MONAI
+
+## Outcome
+
+The model accurately segmented both the inner and outer ventricular boundaries across diverse cardiac MRI slices, with Hausdorff distances of only 3–5 pixels. The pipeline outputs structured x/y contour coordinates compatible with downstream FEA mesh construction, with a user-friendly interface requiring no manual parameter adjustments.

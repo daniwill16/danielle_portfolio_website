@@ -25,7 +25,7 @@ export const Footer = () => {
           <Text onBackground="neutral-weak">© {currentYear} /</Text>
           <Text paddingX="4">{person.name}</Text>
           <Text onBackground="neutral-weak">
-            / Last updated February 2026
+            / Last updated July 2026
           </Text>
         </Text>
         <Row gap="16">

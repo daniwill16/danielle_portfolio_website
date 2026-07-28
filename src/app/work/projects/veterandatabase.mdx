@@ -1,26 +1,112 @@
 ---
-title: "Veteran Member Database System"
-summary: "A custom SQL‑based database built to help a nonprofit organization manage and track member information."
-publishedAt: "Present"
+title: "Wounded War Heroes Database System"
+summary: "A full‑stack database and dashboard system built for the Wounded War Heroes organization to centralize veteran records, event participation, service requests, and analytics."
+images:
+  - "/images/wwhlogo.jpg"
+  - "/images/wwh.jpg"
+  - "/images/dashboard.jpg"
+
+publishedAt: "2026-05-02"
 ---
 
 ## Overview
-This project involves designing and implementing a custom SQL database for a nonprofit organization dedicated to supporting wounded veterans. The goal is to create a reliable, organized system for storing and managing member information, enabling the organization to track participation, outreach, and support services more efficiently.
+This project involved designing and implementing a full‑stack database system for the Wounded War Heroes organization. The system centralizes veteran information, event participation, volunteer activities, service requests, and contact history. It replaces scattered spreadsheets with a structured database and an interactive dashboard that provides real‑time insights through charts, statistics, and searchable records.
 
-## Problem Motivation
-The organization previously relied on scattered spreadsheets and manual record‑keeping, making it difficult to maintain accurate member data or generate meaningful insights. A centralized database was needed to streamline operations, reduce errors, and support long‑term growth.
+## Abstract
+The system integrates multiple data categories including veterans, trip events, volunteer events, participation records, and contact history. A MySQL database stores all structured data, while a web‑based interface built with HTML, CSS, and JavaScript allows staff to interact with the system. Backend logic is handled using Python or PHP.
 
-## Key Features
-- **Centralized Member Records:** Stores personal details, service history, contact information, and membership status  
-- **Structured SQL Schema:** Designed relational tables to ensure data integrity and efficient querying  
-- **Search & Retrieval Tools:** Enables quick lookup of members based on attributes such as location, service branch, or participation  
-- **Scalable Design:** Built to support future additions such as event tracking, donations, or volunteer activity  
+The dashboard highlights key metrics such as total veterans, event counts, participation trends, and service request statuses. Users can search for veterans, track event involvement, review service dog requests, and analyze engagement over time.  
+
+## Introduction
+The Wounded War Heroes Database supports a national organization dedicated to assisting wounded veterans. The system provides centralized storage for veteran records, event details, participation logs, and service requests. It also includes dashboards for analyzing trends in attendance, volunteer activity, and service support.
+
+Primary users include administrators, staff members, and event coordinators who need tools for searching records, managing events, tracking service requests, and generating reports.
+
+## Database Design
+The database includes multiple interconnected tables:
+
+- Veteran  
+- TripEvent  
+- TripParticipation  
+- VolunteerEvent  
+- EventVolunteer  
+- VeteranContactYear  
+- PotentialMember  
+- ServiceDog  
+- DeerMount  
+
+Each table follows BCNF normalization with clearly defined functional dependencies. The ER diagram includes relationships for veteran participation, service requests, volunteer involvement, and contact history.
+
+### User Requirements
+- Store detailed veteran records  
+- Track trip and volunteer events  
+- Log participation for each veteran  
+- Manage service requests  
+- Provide search functionality  
+- Display dashboards and analytics  
+
+### Business Rules
+- Veterans may participate in multiple events  
+- Service requests link to exactly one veteran  
+- Events are categorized as trip or volunteer  
+- Duplicate participation records are not allowed  
+
+### Assumptions
+- All IDs are unique  
+- Only authorized staff modify data  
+- Contact history is optional  
+- Contact information is valid  
+
+### Constraints
+- Foreign keys must match existing records  
+- Email and phone must be unique  
+- Event dates must be valid  
+- Participation requires both VeteranID and EventID  
+- Deleting linked records is restricted  
+
+## Database Implementation
+The system includes:
+
+- SQL table creation statements  
+- Insert statements for sample data  
+- Fully normalized schemas  
+- Referential integrity through foreign keys  
+
+Tables were populated with real veteran and event data, including trip events, volunteer events, service dog requests, deer mounts, and contact history.
+
+## Data Manipulation
+The project includes sample SQL queries such as:
+
+- Veterans with purple heart awards  
+- Veterans from specific cities  
+- Participation records  
+- Service dog request statuses  
+- Volunteer event involvement  
+
+These queries demonstrate how staff can retrieve meaningful insights from the database.
+
+## Web Based Interface
+The frontend was built using:
+
+- HTML  
+- CSS  
+- JavaScript  
+
+The interface includes:
+
+- Search tools  
+- Event management pages  
+- Participation logs  
+- Service request tracking  
+- Dashboard visualizations  
+
+Charts and graphs help users understand participation trends, event activity, and veteran engagement.
 
 ## My Contributions
-- Designing the relational database schema and table structures  
-- Implementing SQL queries for data entry, updates, and reporting  
-- Ensuring data consistency through constraints, indexing, and normalization  
-- Collaborating directly with the organization’s leadership to understand operational needs and translate them into technical requirements  
+- Assisted with database documentation and report writing  
+- Helped organize project sections and contributed to the written deliverables  
+- Participated in group coordination and presentation preparation  
 
-## Reflection
-This project is strengthening my practical SQL skills and gave me experience building a real‑world data system from the ground up. It is also reinforcing the importance of designing tools that directly support community‑focused organizations and improve their ability to serve others.
+## Conclusion
+The Wounded War Heroes Database System provides a centralized, efficient way for the organization to manage veteran information, event participation, and service requests. The dashboard transforms raw data into actionable insights, improving decision‑making and operational efficiency. The project demonstrates strong database design, normalization, SQL implementation, and full‑stack integration.
+
