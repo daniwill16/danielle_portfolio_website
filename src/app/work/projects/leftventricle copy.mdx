@@ -1,0 +1,32 @@
+---
+title: "Automated Left Ventricle Segmentation"
+summary: "A deep learning pipeline using a U-Net architecture to automatically segment the left ventricle from cardiac MRI and CT scans for downstream medical analysis."
+publishedAt: "2025-05-02"
+images:
+  - "/images/segmentationPreliminaryData04062026.PNG"
+  - "/images/metrics2.jpeg"
+---
+
+## Overview
+
+This project developed an automated segmentation pipeline for the left ventricle (LV) from cardiac MRI and CT scans. Accurate LV segmentation is critical for downstream tasks like finite element analysis (FEA) and mesh generation, which are used to model and simulate potential treatments for myocardial infarction — the leading cause of death worldwide.
+
+## My Contributions
+
+As a core member of the team, I was responsible for developing the **training and validation components** of the project. This included:
+
+- Designing the **patient-level 90/10 train/validation split** to prevent data leakage and ensure the model generalized to unseen patients
+- Selecting and justifying the **Binary Cross-Entropy with Logits loss function**, chosen for its stability with raw model outputs and clean handling of multi-output segmentation
+- Establishing the **validation strategy** using multiple metrics including Dice coefficient, IoU, Precision, Recall, Accuracy, and Hausdorff distance
+- Generating **performance visualizations** including metric distribution boxplots and segmentation overlay figures
+
+## Technical Highlights
+
+- **Model:** Modified U-Net architecture with two prediction heads for inner and outer LV wall segmentation
+- **Datasets:** Combined the Sunnybrook Cardiac Dataset (SCD) and Automated Cardiac Diagnosis Challenge (ACDC) dataset — two datasets in different formats and dimensions
+- **Results:** Achieved a Dice score of approximately **0.95** with low variance across the validation set, confirming strong generalization to unseen patients
+- **Tools:** Python, PyTorch, OpenCV, albumentations, MONAI
+
+## Outcome
+
+The model accurately segmented both the inner and outer ventricular boundaries across diverse cardiac MRI slices, with Hausdorff distances of only 3–5 pixels. The pipeline outputs structured x/y contour coordinates compatible with downstream FEA mesh construction, with a user-friendly interface requiring no manual parameter adjustments.

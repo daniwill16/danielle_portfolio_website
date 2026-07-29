@@ -236,5 +236,7 @@ export interface Gallery extends BasePageConfig {
     alt: string;
     /** Image orientation (horizontal/vertical) */
     orientation: string;
+    section?: string;
+    aspectRatio?: string;
   }>;
 }
